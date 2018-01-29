@@ -89,6 +89,7 @@ class customCheck:
                 
                 client = paramiko.SSHClient()
                 client.load_system_host_keys()
+		log.info("connecting %s:%s" % (host, item.get('login')))
                 client.connect(host, username=item.get('login'))
                 
                 for i in chk: 
